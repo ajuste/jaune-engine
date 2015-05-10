@@ -36,7 +36,7 @@
     "type": "git"
   },
   "version": "0.0.1",
-  "_id": "jaune-engine@0.0.1",
+  "_id": "jaune-engine@0.0.2",
   "directories" : {
     "directories.lib" : "lib"
   },
