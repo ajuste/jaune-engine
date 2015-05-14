@@ -9,7 +9,7 @@ var values = {
   logging : {
     core : {
       type : 'db',
-      module : 'iindchance.app.logging.DatabaseLogging'
+      module : 'Logging.StubLogging'
     }
   },
   mail : {

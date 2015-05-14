@@ -1,46 +1,58 @@
+global._require = function(){
+  return function(name) {
+    return require(name.indexOf("/") !== -1 ? [__dirname, name].join("/") : name);
+  };
+};
+
 require("./lib/utils/boolean");
 require("./lib/utils/array");
 require("./lib/utils/date");
 require("./lib/utils/time");
 
+var Environment = null;
+var Instance    = null;
+
 module.exports = {
-  Reflection : require("./lib/utils/reflection").Reflection,
-  UUID : require("./lib/utils/uuid").UUID,
-  Stream : {
-    WriteReadStream  : require("./lib/utils/streams").WriteReadStream
+  init : function(config) {
+
+    Environment = require("./lib/server/environment").init(config);
+    Instance = {};
+    Instance.Environment = Environment;
+    Instance.Reflection = require("./lib/utils/reflection").Reflection;
+    Instance.UUID = require("./lib/utils/uuid").UUID;
+    Instance.Stream = {};
+    Instance.Stream.WriteReadStream = require("./lib/utils/streams").WriteReadStream;
+    Instance.Convert = require("./lib/utils/convert");
+    Instance.Debug = require("./lib/utils/debug");
+    Instance.Validator = require("./lib/utils/validator");
+    Instance.Crypto = {};
+    Instance.Crypto.Hashing = require("./lib/crypto/hashing");
+    Instance.Logging = {};
+    Instance.Logging.Manager = require("./lib/logging/logging-manager");
+    Instance.Error = {};
+    Instance.Error.Errors = require("./lib/error/errors");
+    Instance.Error.Manager = require("./lib/error/error-manager");
+    Instance.Security = require("./lib/security/security");
+    Instance.FileSystem = require("./lib/filesystem/filesystem-manager");
+    Instance.Daemon = {};
+    Instance.Daemon.Status = require("./lib/daemon/daemon-def").DaemonStatus;
+    Instance.Daemon.Manager = require("./lib/daemon/daemon-manager").DaemonManager;
+    Instance.Daemon.Daemon = require("./lib/daemon/daemon").Daemon;
+    Instance.Http = {};
+    Instance.Http.Util = require("./lib/http/http-util");
+    Instance.Mail = {};
+    Instance.Mail.Manager = require("./lib/mail/email-manager").MailManager;
+    Instance.Db = {};
+    Instance.Db.SqlQueryExecutor = require("./lib/db/db-sql-query-executor").SqlQueryExecutor;
+    Instance.Db.Manager = require("./lib/db/db-manager").DatabaseManager;
+    Instance.Db.SqlUtil = require("./lib/db/db-sql-util").SqlUtil;
+    Instance.Locale = {};
+    Instance.Locale.Manager = require("./lib/localization/locale").LocaleManager;
+    Instance.App = require("./lib/server/app");
+
+    return Instance;
   },
-  Convert : require("./lib/utils/convert"),
-  Debug : require("./lib/utils/debug"),
-  Validator : require("./lib/utils/validator"),
-  Hashing : require("./lib/crypto/hashing"),
-  Environment : require("./lib/server/environment"),
-  Logging : {
-    Manager : require("./lib/logging/logging-manager")
-  },
-  Error : {
-    Errors : require("./lib/error/errors"),
-    Manager : require("./lib/error/error-manager")
-  },
-  Security : require("./lib/security/security"),
-  FileSystem : require("./lib/filesystem/filesystem-manager"),
-  Daemon : {
-    Status : require("./lib/daemon/daemon-def").DaemonStatus,
-    Manager : require("./lib/daemon/daemon-manager").DaemonManager,
-    Daemon : require("./lib/daemon/daemon").Daemon
-  },
-  Http : {
-    Util : require("./lib/http/http-util")
-  },
-  Mail : {
-    MailManager : require("./lib/mail/email-manager").MailManager
-  },
-  Db : {
-    SqlQueryExecutor : require("./lib/db/db-sql-query-executor").SqlQueryExecutor,
-    Manager : require("./lib/db/db-manager").DatabaseManager,
-    SqlUtil : require("./lib/db/db-sql-util").SqlUtil
-  },
-  Locale : {
-    Locale : require("./lib/localization/locale").LocaleManager
-  },
-  App : require("./lib/server/app")
+  get : function() {
+    return Instance;
+  }
 };

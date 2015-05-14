@@ -27,7 +27,8 @@
   "devDependencies" : {
     "mocha"      : "=2.2.x",
     "should"     : "=6.0.x",
-    "sinon"      : "=1.14.x"
+    "sinon"      : "=1.14.x",
+    "proxyquire" : "=1.4.x"
   },
   "main": "index.js",
   "name": "jaune-engine",
@@ -35,8 +36,8 @@
     "url": "git@github.com:ajuste/jaune-engine.git",
     "type": "git"
   },
-  "version": "0.0.1",
-  "_id": "jaune-engine@0.0.2",
+  "version": "0.0.4",
+  "_id": "jaune-engine@0.0.4",
   "directories" : {
     "directories.lib" : "lib"
   },
