@@ -16,6 +16,7 @@
     "ncp"        : "=0.4.x",
     "node-uuid"  : "=1.4.x",
     "nodemailer" : "=0.6.x",
+    "jade"       : "=1.9.x",
     "pg"         : "=2.3.x",
     "sendgrid"   : "=0.2.x",
     "sleep"      : "=1.1.x",
