@@ -4,6 +4,7 @@
   },
   "description": "jaune-engine",
   "dependencies": {
+    "co": "^4.6.0",
     "crypto": "=0.0.x",
     "dropbox": "=0.10.x",
     "express": "=3.4.x",
