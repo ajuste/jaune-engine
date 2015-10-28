@@ -29,7 +29,6 @@
     "q": "^1.2.1",
     "request": "=2.33.x",
     "sendgrid": "=0.2.x",
-    "sleep": "=1.1.x",
     "string": "=1.5.x",
     "underscore": "=1.8.x"
   },
