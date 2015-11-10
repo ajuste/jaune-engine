@@ -32,7 +32,7 @@ module.exports = {
 
     // crypto namespace
     _extend(_instance, { Crypto : _crypto });
-    _extend(_instance, { Crypto : { Hashing : new _crypto.Hashing() }});
+    _extend(_instance, { Crypto : { Hashing : new _crypto.Hashing(config) }});
 
     // fs namespace
     _extend(_instance, { Fs : _fs });
@@ -46,12 +46,13 @@ module.exports = {
     _extend(_instance, { Error : { Manager : new _errors.Manager() }});
 
     // security namespace
+    const securityManager = new _security.Manager();
     _extend(_instance, { Security : _security });
-    _extend(_instance, { Security : { Manager : new _security.Manager() }});
+    _extend(_instance, { Security : { Manager : securityManager }});
 
     // daemon namespace
     _extend(_instance, { Daemon : _daemon });
-    _extend(_instance, { Daemon : { Manager : new _daemon.Manager() }});
+    _extend(_instance, { Daemon : { Manager : new _daemon.Manager(securityManager) }});
 
     // mail namespace
     _extend(_instance, { Mail : _mail });

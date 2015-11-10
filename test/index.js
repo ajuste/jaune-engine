@@ -1,3 +1,3 @@
 // compile test ;-)
 
-require ("../")
+require ("../").create({});

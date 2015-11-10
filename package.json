@@ -28,8 +28,8 @@
     "type": "git",
     "url": "ajuste/jaune-engine.git"
   },
-  "version": "0.0.4",
-  "_id": "jaune-engine@0.0.4",
+  "version": "1.0.0",
+  "_id": "jaune-engine@1.0.0",
   "directories": {
     "directories.lib": "lib"
   },
