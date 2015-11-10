@@ -58,14 +58,8 @@ module.exports = {
     _extend(_instance, { Mail : { Manager : new _mail.Manager(_env) }});
 
     // db namespace
-    _extend(_instance, { Mail : _mail });
-    _extend(_instance, { Mail : { Manager : new _mail.Manager() }});
-
-
-    _instance.Db                  = {};
-    _instance.Db.SqlQueryExecutor = require("./lib/db/db-sql-query-executor").SqlQueryExecutor;
-    _instance.Db.Manager          = require("./lib/db/db-manager").DatabaseManager;
-    _instance.Db.SqlUtil          = require("./lib/db/db-sql-util").SqlUtil;
+    _extend(_instance, { Db : _db });
+    _extend(_instance, { Db : { Manager : new _db.Manager(_env) }});
 
     return _instance;
   }
