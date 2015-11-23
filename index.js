@@ -47,6 +47,7 @@ module.exports = {
 
     // security namespace
     const securityManager = new _security.Manager();
+
     _extend(_instance, { Security : _security });
     _extend(_instance, { Security : { Manager : securityManager }});
 
