@@ -6,6 +6,7 @@ const _extend      = require("lodash").extend;
 // jaune
 const _environment = require("jaune-env");
 const _fs          = require("jaune-fs");
+const _util        = require("jaune-util");
 
 // lib
 const _daemon      = require("./lib/daemon");
@@ -29,6 +30,9 @@ module.exports = {
 
     // env namespace
     _extend(_instance, { Environment : _env });
+
+    // util namespace
+    _extend(_instance, { Util : _util });
 
     // crypto namespace
     _extend(_instance, { Crypto : _crypto });
