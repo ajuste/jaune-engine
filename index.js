@@ -36,36 +36,36 @@ module.exports = {
 
     // crypto namespace
     _extend(_instance, { Crypto : _crypto });
-    _extend(_instance, { Crypto : { Hashing : new _crypto.Hashing(config) }});
+    _extend(_instance.Crypto, { Hashing : new _crypto.Hashing(config) });
 
     // fs namespace
     _extend(_instance, { Fs : _fs });
-    _extend(_instance, { Fs : { Manager : new _fs.Manager(_env) }});
+    _extend(_instance.Fs, { Manager : new _fs.Manager(_env) });
 
     // logging namespace
     _extend(_instance, { Logging : { Manager : new _logging.Manager(_env) } });
 
     // error namespace
     _extend(_instance, { Error : _errors });
-    _extend(_instance, { Error : { Manager : new _errors.Manager() }});
+    _extend(_instance.Error, { Manager : new _errors.Manager() });
 
     // security namespace
     const securityManager = new _security.Manager();
 
     _extend(_instance, { Security : _security });
-    _extend(_instance, { Security : { Manager : securityManager }});
+    _extend(_instance.Security, { Manager : securityManager });
 
     // daemon namespace
     _extend(_instance, { Daemon : _daemon });
-    _extend(_instance, { Daemon : { Manager : new _daemon.Manager(securityManager) }});
+    _extend(_instance.Daemon, { Manager : new _daemon.Manager(securityManager) });
 
     // mail namespace
     _extend(_instance, { Mail : _mail });
-    _extend(_instance, { Mail : { Manager : new _mail.Manager(_env) }});
+    _extend(_instance.Mail, { Manager : new _mail.Manager(_env) });
 
     // db namespace
     _extend(_instance, { Db : _db });
-    _extend(_instance, { Db : { Manager : new _db.Manager(_env) }});
+    _extend(_instance.Db, { Manager : new _db.Manager(_env) });
 
     return _instance;
   }
