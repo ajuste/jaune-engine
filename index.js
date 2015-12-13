@@ -36,7 +36,6 @@ module.exports = {
 
     // crypto namespace
     _extend(_instance, { Crypto : _crypto });
-    _extend(_instance.Crypto, { Hashing : new _crypto.Hashing(config) });
 
     // fs namespace
     _extend(_instance, { Fs : _fs });
