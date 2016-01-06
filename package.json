@@ -18,21 +18,30 @@
     "sendgrid": "=0.2.x",
     "string": "=1.5.x"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "main": "index.js",
   "name": "jaune-engine",
   "repository": {
     "type": "git",
-    "url": "ajuste/jaune-engine.git"
+    "url": "git+https://github.com/ajuste/jaune-engine.git"
   },
-  "version": "0.0.1",
-  "_id": "jaune-engine@0.0.1",
+  "version": "0.0.4",
   "directories": {
-    "directories.lib": "lib"
+    "test": "test"
   },
   "engine": "node >= 0.12.x",
   "scripts": {
     "test": "mocha ./test/*"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ajuste/jaune-engine/issues"
+  },
+  "homepage": "https://github.com/ajuste/jaune-engine#readme",
+  "keywords": [
+    "web",
+    "engine",
+    "framework",
+    "jaune"
+  ],
+  "license": "ISC"
 }
