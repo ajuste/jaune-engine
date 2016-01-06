@@ -1,16 +1,14 @@
 {
-  "author": {
-    "name": "Alvaro Juste"
-  },
+  "author": "Alvaro Juste <juste.alvaro@gmail.com>",
   "description": "jaune-engine",
   "dependencies": {
     "co": "^4.6.0",
     "crypto": "=0.0.x",
     "gm": "=1.9.x",
     "iconv": "=2.1.x",
-    "jaune-env": "git+https://github.com/ajuste/jaune-env.git#master",
-    "jaune-fs": "git+https://github.com/ajuste/jaune-fs.git#master",
-    "jaune-util": "git+https://github.com/ajuste/jaune-util.git#master",
+    "jaune-env": "=0.0.x",
+    "jaune-fs": "=0.0.x",
+    "jaune-util": "=0.0.x",
     "lodash": "^3.10.1",
     "mongoose": "=3.8.x",
     "node-uuid": "=1.4.x",
@@ -29,7 +27,7 @@
     "url": "ajuste/jaune-engine.git"
   },
   "version": "1.0.0",
-  "_id": "jaune-engine@1.0.0",
+  "_id": "jaune-engine@0.0.1",
   "directories": {
     "directories.lib": "lib"
   },
