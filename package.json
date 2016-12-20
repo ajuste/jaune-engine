@@ -4,16 +4,16 @@
   "dependencies": {
     "co": "^4.6.0",
     "crypto": "=0.0.x",
-    "jaune-fs": "=0.0.x",
     "jaune-env": "=0.0.x",
+    "jaune-fs": "=0.0.x",
     "jaune-util": "git+ssh://github.com/ajuste/jaune-util.git#master",
     "lodash": "^3.10.1",
-    "node-uuid": "=1.4.x",
     "nodemailer": "=0.6.x",
     "pg": "=2.3.x",
     "q": "^1.2.1",
     "sendgrid": "=0.2.x",
-    "string": "=1.5.x"
+    "string": "=1.5.x",
+    "uuid": "^3.0.0"
   },
   "devDependencies": {},
   "main": "index.js",
